@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package gpsparser;
+package gpxparser;
 
 import java.io.File;
 import java.io.IOException;
@@ -17,7 +17,8 @@ import org.jsoup.select.Elements;
  *
  * @author yonseca
  */
-public class GpsParser {
+public class GpxParser {
+    
 
     /**
      * @param args the command line arguments
@@ -29,8 +30,9 @@ public class GpsParser {
             //System.out.println(doc.text());
             Elements track = doc.getElementsByTag("trk");
             System.out.println(track.text());
+            
         } catch (IOException ex) {
-            Logger.getLogger(GpsParser.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(GpxParser.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
     
