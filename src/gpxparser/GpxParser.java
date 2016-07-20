@@ -14,6 +14,7 @@ import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
+import org.apache.commons.lang3.math.NumberUtils; 
 
 /**
  *
@@ -37,9 +38,9 @@ public class GpxParser {
             Elements trkPt = trackData.select("trkseg").select("trkpt");
             for (Iterator<Element> iterator = trkPt.iterator(); iterator.hasNext();) {
                 Element dataPoint = iterator.next();
-                Double lat = Double.parseDouble(dataPoint.attr("lat"));
-                Double lon = Double.parseDouble(dataPoint.attr("lon"));
-                Double altitude = Double.parseDouble(dataPoint.select("ele").text()); 
+                Double lat = NumberUtils.toDouble(dataPoint.attr("lat"));
+                Double lon = NumberUtils.toDouble(dataPoint.attr("lon"));
+                Double altitude = NumberUtils.toDouble(dataPoint.select("ele").text()); 
                 track.addPoint(lat, lon, altitude);
             }
             System.out.println("");
