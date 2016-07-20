@@ -22,7 +22,6 @@ public class TrackPoint {
     public TrackPoint() {
     }
 
-
     public Double getLat() {
         return lat;
     }

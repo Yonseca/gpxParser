@@ -15,6 +15,17 @@ public class Track {
     
     private ArrayList<TrackPoint> points;
     private String name;
+
+    public Track() {
+        points = new ArrayList<TrackPoint>(); 
+    }
+
+    public Track(ArrayList<TrackPoint> points, String name) {
+        this.points = points;
+        this.name = name;
+    }
+    
+    
     
     public void addPoint(TrackPoint point){
         points.add(point); 
